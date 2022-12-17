@@ -30,5 +30,22 @@ it("should yield a correct sum if an array of numeric string values is provided"
   // act
   const result = add(inputs);
   // assert
-  expect(result).toBe(3);
+  expect(result).toBe(expected);
+});
+
+it("should yield 0 if an empty array is provided", () => {
+  // arrange
+  const inputs = [];
+  const expected = 0;
+  // act
+  const result = add(inputs);
+  // assert
+  expect(result).toBe(expected);
+});
+
+it("should throw an error if no value is passed to the function", () => {
+  const resultFn = () => {
+    add();
+  };
+  expect(resultFn).toThrow();
 });
