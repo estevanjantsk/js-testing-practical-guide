@@ -1,0 +1,34 @@
+import { it, expect } from "vitest";
+
+import { add } from "./math";
+
+it("should summarize all number values in an array", () => {
+  // arrange
+  const numbers = [1, 2, 3];
+  const expected = 6;
+
+  // act
+  const res = add(numbers);
+
+  // assert
+  expect(res).toEqual(expected);
+});
+
+it("should yield NaN if a least one invalid number is provided", () => {
+  // arrange
+  const inputs = ["number", 1];
+  // act
+  const result = add(inputs);
+  // assert
+  expect(result).toBeNaN();
+});
+
+it("should yield a correct sum if an array of numeric string values is provided", () => {
+  // arrange
+  const inputs = ["1", "2"];
+  const expected = 3;
+  // act
+  const result = add(inputs);
+  // assert
+  expect(result).toBe(3);
+});
