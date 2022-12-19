@@ -31,7 +31,7 @@ it("should return a promise that resolves to no value if called correctly", () =
 
   writeData(testData, testFilename);
 
-  // return expect(writeData(testData, testFilename)).resolves.toBeUndefined();
+  return expect(writeData(testData, testFilename)).resolves.toBeUndefined();
   // expect(fs.writeFile).toBeCalled();
   // expect(fs.writeFile).toBeCalledWith(testFilename, testData);
 });
